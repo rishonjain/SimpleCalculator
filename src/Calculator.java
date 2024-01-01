@@ -14,7 +14,7 @@ public class Calculator implements ActionListener {
     JPanel panel;
 
     Font font1 = new Font("Times New Roman", Font.BOLD,30);
-    Font font2 = new Font("Times New Roman", Font.BOLD,20);
+    Font font2 = new Font("Times New Roman", Font.BOLD,22);
 
     double num1=0,num2=0,result=0;
     char operator;
@@ -37,8 +37,8 @@ public class Calculator implements ActionListener {
         divideButton = new JButton("/");
         equalstoButton = new JButton("=");
         decimalButton = new JButton(".");
-        delButton = new JButton("Delete");
-        clearButton = new JButton("Clear");
+        delButton = new JButton("Del");
+        clearButton = new JButton("Clr");
         percentageButton = new JButton("%");
         negativeButton = new JButton("(-)");
 
@@ -78,16 +78,14 @@ public class Calculator implements ActionListener {
 
         }
 
-        negativeButton.setBounds(50,430,100,50);
-        delButton.setBounds(155,430,100,50);
-        clearButton.setBounds(260,430,90,50);
-        equalstoButton.setBounds(130, 490,145,50);
-
-
-
         panel = new JPanel();
         panel.setBounds (50, 100, 300, 300);
-        panel.setLayout(new GridLayout (4,4,10,10));
+        panel.setLayout(new GridLayout (5,4,10,10));
+
+        panel.add(functionButtons[9]);
+        panel.add(functionButtons[6]);
+        panel.add(functionButtons[7]);
+        panel.add(functionButtons[4]);
 
         panel.add(numberButtons[1]);
         panel.add(numberButtons[2]);
@@ -110,10 +108,6 @@ public class Calculator implements ActionListener {
         panel.add(functionButtons[3]);
 
         frame.add(textField);
-        frame.add(negativeButton);
-        frame.add(delButton);
-        frame.add(clearButton);
-        frame.add(equalstoButton);
         frame.add(panel);
         frame.setVisible(true);
     }
